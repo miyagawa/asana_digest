@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+$:.unshift File.dirname(__FILE__) + '/../lib' if $0 == __FILE__
+require 'asana_digest/task'
+
+AsanaDigest::Task.new(ARGV).run
