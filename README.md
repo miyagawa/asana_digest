@@ -7,9 +7,9 @@ asana_digest is a command line application to fetch Asana tasks of the previous 
 Required environment variables:
 
 - `ASANA_DIGEST_APIKEY`: API key for Asana
-- `ASANA_DIGEST_PROJECT_ID`: Project(s) ID to get tasks from. Separate with comma.
+- `ASANA_DIGEST_PROJECT_ID`: Project ID(s) to get tasks from. Separate with comma.
 - `ASANA_DIGEST_HIPCHAT_TOKEN`: API token for Hipchat messaging
-- `ASANA_DIGEST_HIPCHAT_ROOM_NAME`: Romm name (ID) for Hipchat messaging
+- `ASANA_DIGEST_HIPCHAT_ROOM_NAME`: Room name (ID) for Hipchat messaging
 ```
 
 Optional environment variables:
