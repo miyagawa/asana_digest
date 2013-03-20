@@ -27,9 +27,18 @@ module AsanaDigest
 
     def previous_work_day
       # Use TZ=Asia/Tokyo to change the timezone
-      # TODO: This doesn't take holidays into account
+      # This doesn't take holidays into account
+      # Use ASANA_DIGEST_OFFSET=2 if prev day was a holiday
       today = Time.now
-      today.monday? ? (today - 3.days) : (today - 1.day)
+      today - date_offset(today)
+    end
+
+    def date_offset(today)
+      if ENV['ASANA_DIGEST_OFFSET']
+        ENV['ASANA_DIGEST_OFFSET'].to_i.days
+      else
+        today.monday? ? 3.days : 1.day
+      end
     end
 
     def date_includes?(date, completed)
